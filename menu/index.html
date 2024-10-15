@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Restaurant</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom Styles */
+        .banner {
+            background: url('/banner.jpg') no-repeat center center;
+            background-size: cover;
+            height: 200px;
+        }
+
+        /* .category-buttons {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            margin-top: -50px;
+            padding: 10px 0;
+            white-space: nowrap;
+        } */
+
+        .category-buttons {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            margin-top: 20px;
+            white-space: nowrap;
+            padding: 0px 20px;
+
+        }
+
+        .category-buttons::-webkit-scrollbar {
+            display: none;
+            /* For Chrome, Safari, and Opera */
+        }
+
+        .category-buttons a {
+            padding: 10px 20px;
+            background-color: #ffc107;
+            border-radius: 50px;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            flex: 0 0 auto;
+        }
+
+
+        .category-buttons a:hover,
+        .category-buttons a.active {
+            background-color: #cb5e3d;
+        }
+
+        .menu-item {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .menu-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .price {
+            float: right;
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        /* Footer styling */
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin-top: auto;
+        }
+
+        .logo {
+            height: 28px;
+        }
+
+        .text {
+            font-size: 14px;
+        }
+
+        .credit {
+            color: #ffc107;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .credit:hover {
+            color: #cb5e3d;
+            text-decoration: underline;
+        }
+
+        /* Responsive layout for category buttons */
+        @media (max-width: 768px) {
+            .category-buttons {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Header -->
+    <header class="bg-dark text-white py-2">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- Restaurant Logo (Left side) -->
+                <div class="logo">
+                    <img src="/logoo.png"
+                        alt="Logo" class="img-fluid logo">
+                </div>
+
+                <!-- Social Media Icons (Right side) -->
+                <div class="social-icons">
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com" class="btn btn-outline-light btn-circle" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com" class="btn btn-outline-light btn-circle" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/+1234567890" class="btn btn-outline-light btn-circle" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Small Banner -->
+    <section class="banner"></section>
+
+    <!-- Category Buttons (Filter) -->
+    <div class="category-buttons">
+        <a href="#" class="filter-btn active" data-filter="*">All</a>
+        <a href="#" class="filter-btn" data-filter=".appetizers">Appetizers</a>
+        <a href="#" class="filter-btn" data-filter=".main-courses">Main Courses</a>
+        <a href="#" class="filter-btn" data-filter=".desserts">Desserts</a>
+        <a href="#" class="filter-btn" data-filter=".drinks">Drinks</a>
+        <a href="#" class="filter-btn" data-filter=".salads">Salads</a>
+    </div>
+
+    <!-- Menu Items Area -->
+    <section class="py-1">
+        <div class="container">
+            <div id="menu-items" class="row">
+                <!-- Appetizers -->
+                <div class="col-sm-6 col-lg-4 menu-item appetizers">
+                    <div class="box d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Garlic Bread</h5>
+                        <div class="price">₹15.00</div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 menu-item appetizers">
+                    <div class="box d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Bruschetta</h5>
+                        <div class="price">₹16.50</div>
+                    </div>
+                </div>
+
+                <!-- Main Courses -->
+                <div class="col-sm-6 col-lg-4 menu-item main-courses">
+                    <div class="box d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Margherita Pizza</h5>
+                        <div class="price">₹200.00</div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 menu-item main-courses">
+                    <div class="box d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Pasta Alfredo</h5>
+                        <div class="price">₹40.00</div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 menu-item main-courses">
+                    <div class="box d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Bread</h5>
+                        <div class="price">₹16.00</div>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="col-sm-6 col-lg-4 menu-item desserts">
+                    <div class="box d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Tiramisu</h5>
+                        <div class="price">₹7.00</div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 menu-item desserts">
+                    <div class="box d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Gelato</h5>
+                        <div class="price">₹5.50</div>
+                    </div>
+                </div>
+
+                <!-- Drinks -->
+                <div class="col-sm-6 col-lg-4 menu-item drinks">
+                    <div class="box d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Lemonade</h5>
+                        <div class="price">₹20.00</div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 menu-item drinks">
+                    <div class="box d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Mojito</h5>
+                        <div class="price">₹70.00</div>
+                    </div>
+                </div>
+
+                <!-- Salads -->
+                <div class="col-sm-6 col-lg-4 menu-item salads">
+                    <div class="box d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Greek Salad</h5>
+                        <div class="price">₹30.00</div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 menu-item salads">
+                    <div class="box d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Caesar Salad</h5>
+                        <div class="price">₹90.00</div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 menu-item salads">
+                    <div class="box d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Mexican Salad</h5>
+                        <div class="price">₹40.00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-2">
+        <p class="mb-0 text">&copy; 2024 Resto. All Rights Reserved.</p>
+        <p class="mb-0 text">Developed by <a class="credit" href="https://ezato.in">ezato tech</a></p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript for Dynamic Menu Filtering -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initially, show all items
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.style.display = 'block';
+            });
+
+            // Handle filter button clicks
+            document.querySelectorAll('.filter-btn').forEach(button => {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Remove active class from all buttons and add to the clicked one
+                    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Get the filter value
+                    const filterValue = this.getAttribute('data-filter');
+
+                    // Show/hide menu items based on filter
+                    document.querySelectorAll('.menu-item').forEach(item => {
+                        if (filterValue === '*' || item.classList.contains(filterValue.substring(1))) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
