@@ -66,10 +66,26 @@
             background-color: #f8f9fa;
         }
 
+        .item-img {
+            width: 35px;
+            height: 35px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .item-name {
+            margin-left: 8px;
+            /* Small space between image and name */
+            flex-grow: 1;
+            /* Ensures name grows naturally with space */
+        }
+
+
         .price {
-            float: right;
+            /* float: right; */
             font-weight: bold;
             color: #28a745;
+            margin-left: auto;
         }
 
         /* Footer styling */
@@ -123,8 +139,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <!-- Restaurant Logo (Left side) -->
                 <div class="logo">
-                    <img src="logoo.png"
-                        alt="Logo" class="img-fluid logo">
+                    <img src="logoo.png" alt="Logo" class="img-fluid logo">
                 </div>
 
                 <!-- Social Media Icons (Right side) -->
@@ -166,13 +181,17 @@
                 <!-- Appetizers -->
                 <div class="col-sm-6 col-lg-4 menu-item appetizers">
                     <div class="box d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Garlic Bread</h5>
+                        <!-- Item image -->
+                        <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
+                        <!-- Item name and price -->
+                        <h5 class="mb-0 item-name">Garlic Bread</h5>
                         <div class="price">₹15.00</div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4 menu-item appetizers">
                     <div class="box d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Bruschetta</h5>
+                        <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
+                        <h5 class="mb-0 item-name">Bruschetta</h5>
                         <div class="price">₹16.50</div>
                     </div>
                 </div>
@@ -180,19 +199,22 @@
                 <!-- Main Courses -->
                 <div class="col-sm-6 col-lg-4 menu-item main-courses">
                     <div class="box d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Margherita Pizza</h5>
+                        <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
+                        <h5 class="mb-0 item-name">Margherita Pizza</h5>
                         <div class="price">₹200.00</div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4 menu-item main-courses">
                     <div class="box d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Pasta Alfredo</h5>
+                        <img src="bread.jpg" alt="Garlic Bread" class="item-img rounded">
+                        <h5 class="mb-0 item-name">Pasta Alfredo</h5>
                         <div class="price">₹40.00</div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4 menu-item main-courses">
                     <div class="box d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Bread</h5>
+                        <img src="bread.jpg" alt="Garlic Bread" class="item-img rounded">
+                        <h5 class="mb-0 item-name">Bread</h5>
                         <div class="price">₹16.00</div>
                     </div>
                 </div>
@@ -200,13 +222,15 @@
                 <!-- Desserts -->
                 <div class="col-sm-6 col-lg-4 menu-item desserts">
                     <div class="box d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Tiramisu</h5>
+                        <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
+                        <h5 class="mb-0 item-name">Tiramisu</h5>
                         <div class="price">₹7.00</div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4 menu-item desserts">
                     <div class="box d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Gelato</h5>
+                        <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
+                        <h5 class="mb-0 item-name">Gelato</h5>
                         <div class="price">₹5.50</div>
                     </div>
                 </div>
@@ -214,13 +238,15 @@
                 <!-- Drinks -->
                 <div class="col-sm-6 col-lg-4 menu-item drinks">
                     <div class="box d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Lemonade</h5>
+                        <img src="lemon.jpg" alt="Garlic Bread" class="item-img rounded">
+                        <h5 class="mb-0 item-name">Lemonade</h5>
                         <div class="price">₹20.00</div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4 menu-item drinks">
                     <div class="box d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Mojito</h5>
+                        <img src="juice.jpg" alt="Garlic Bread" class="item-img rounded">
+                        <h5 class="mb-0 item-name">Mojito</h5>
                         <div class="price">₹70.00</div>
                     </div>
                 </div>
@@ -228,19 +254,22 @@
                 <!-- Salads -->
                 <div class="col-sm-6 col-lg-4 menu-item salads">
                     <div class="box d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Greek Salad</h5>
+                        <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
+                        <h5 class="mb-0 item-name">Greek Salad</h5>
                         <div class="price">₹30.00</div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4 menu-item salads">
                     <div class="box d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Caesar Salad</h5>
+                        <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
+                        <h5 class="mb-0 item-name">Caesar Salad</h5>
                         <div class="price">₹90.00</div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4 menu-item salads">
                     <div class="box d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Mexican Salad</h5>
+                        <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
+                        <h5 class="mb-0 item-name">Mexican Salad</h5>
                         <div class="price">₹40.00</div>
                     </div>
                 </div>
