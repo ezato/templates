@@ -11,20 +11,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Custom Styles */
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex-grow: 1;
+            /* padding-bottom: 100px; */
+        }
+
         .banner {
             background: url('banner.jpg') no-repeat center center;
             background-size: cover;
-            height: 200px;
+            height: 160px;
         }
-
-        /* .category-buttons {
-            display: flex;
-            overflow-x: auto;
-            gap: 10px;
-            margin-top: -50px;
-            padding: 10px 0;
-            white-space: nowrap;
-        } */
 
         .category-buttons {
             display: flex;
@@ -33,7 +38,6 @@
             margin-top: 20px;
             white-space: nowrap;
             padding: 0px 20px;
-
         }
 
         .category-buttons::-webkit-scrollbar {
@@ -50,7 +54,6 @@
             transition: background-color 0.3s;
             flex: 0 0 auto;
         }
-
 
         .category-buttons a:hover,
         .category-buttons a.active {
@@ -75,14 +78,10 @@
 
         .item-name {
             margin-left: 8px;
-            /* Small space between image and name */
             flex-grow: 1;
-            /* Ensures name grows naturally with space */
         }
 
-
         .price {
-            /* float: right; */
             font-weight: bold;
             color: #28a745;
             margin-left: auto;
@@ -90,7 +89,7 @@
 
         /* Footer styling */
         footer {
-            position: fixed;
+            /* position: fixed; */
             left: 0;
             bottom: 0;
             width: 100%;
@@ -105,7 +104,7 @@
         }
 
         .logo {
-            height: 28px;
+            height: 25px;
         }
 
         .text {
@@ -115,7 +114,7 @@
         .credit {
             color: #ffc107;
             text-decoration: none;
-            font-weight: bold;
+            /* font-weight: bold; */
         }
 
         .credit:hover {
@@ -123,160 +122,215 @@
             text-decoration: underline;
         }
 
-        /* Responsive layout for category buttons */
+        /* Responsive layout for mobile screens */
         @media (max-width: 768px) {
+
+            /* Smaller header and padding */
+            .header {
+                /* padding: 8px; */
+                font-size: 12px;
+            }
+
+            /* Smaller logo */
+            .logo img {
+                height: 19px;
+            }
+
+            /* Smaller social icons */
+            .social-icons a {
+                font-size: 12px;
+                padding: 2px 5px;
+            }
+
+            /* Smaller category buttons */
+            .category-buttons a {
+                padding: 5px 10px;
+                font-size: 12px;
+            }
+
+            /* Smaller menu item text */
+            .item-name {
+                font-size: 14px;
+            }
+
+            /* Smaller price text */
+            .price {
+                font-size: 14px;
+            }
+
+            .item-img {
+                width: 25px;
+                height: 25px;
+            }
+
+            .menu-item {
+                padding: 0px;
+            }
+
             .category-buttons {
-                flex-direction: row;
+                display: flex;
+                overflow-x: auto;
+                gap: 6px;
+                margin-top: 10px;
+                white-space: nowrap;
+                padding: 0px 14px;
+                justify-content: start;
+            }
+
+            /* Footer text smaller */
+            footer .text {
+                font-size: 11px;
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- Top Header -->
-    <header class="bg-dark text-white py-2">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <!-- Restaurant Logo (Left side) -->
-                <div class="logo">
-                    <img src="logoo.png" alt="Logo" class="img-fluid logo">
-                </div>
+    <main>
+        <!-- Top Header -->
+        <header class="bg-dark text-white py-2 header">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <!-- Restaurant Logo (Left side) -->
+                    <div class="logo">
+                        <img src="logoo.png" alt="Logo" class="img-fluid logo">
+                    </div>
 
-                <!-- Social Media Icons (Right side) -->
-                <div class="social-icons">
-                    <!-- Instagram -->
-                    <a href="https://www.instagram.com" class="btn btn-outline-light btn-circle" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <!-- Facebook -->
-                    <a href="https://www.facebook.com" class="btn btn-outline-light btn-circle" target="_blank">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <!-- WhatsApp -->
-                    <a href="https://wa.me/+1234567890" class="btn btn-outline-light btn-circle" target="_blank">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Small Banner -->
-    <section class="banner"></section>
-
-    <!-- Category Buttons (Filter) -->
-    <div class="category-buttons">
-        <a href="#" class="filter-btn active" data-filter="*">All</a>
-        <a href="#" class="filter-btn" data-filter=".appetizers">Appetizers</a>
-        <a href="#" class="filter-btn" data-filter=".main-courses">Main Courses</a>
-        <a href="#" class="filter-btn" data-filter=".desserts">Desserts</a>
-        <a href="#" class="filter-btn" data-filter=".drinks">Drinks</a>
-        <a href="#" class="filter-btn" data-filter=".salads">Salads</a>
-    </div>
-
-    <!-- Menu Items Area -->
-    <section class="py-1">
-        <div class="container">
-            <div id="menu-items" class="row">
-                <!-- Appetizers -->
-                <div class="col-sm-6 col-lg-4 menu-item appetizers">
-                    <div class="box d-flex justify-content-between align-items-center">
-                        <!-- Item image -->
-                        <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
-                        <!-- Item name and price -->
-                        <h5 class="mb-0 item-name">Garlic Bread</h5>
-                        <div class="price">₹15.00</div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 menu-item appetizers">
-                    <div class="box d-flex justify-content-between align-items-center">
-                        <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
-                        <h5 class="mb-0 item-name">Bruschetta</h5>
-                        <div class="price">₹16.50</div>
-                    </div>
-                </div>
-
-                <!-- Main Courses -->
-                <div class="col-sm-6 col-lg-4 menu-item main-courses">
-                    <div class="box d-flex justify-content-between align-items-center">
-                        <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
-                        <h5 class="mb-0 item-name">Margherita Pizza</h5>
-                        <div class="price">₹200.00</div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 menu-item main-courses">
-                    <div class="box d-flex justify-content-between align-items-center">
-                        <img src="bread.jpg" alt="Garlic Bread" class="item-img rounded">
-                        <h5 class="mb-0 item-name">Pasta Alfredo</h5>
-                        <div class="price">₹40.00</div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 menu-item main-courses">
-                    <div class="box d-flex justify-content-between align-items-center">
-                        <img src="bread.jpg" alt="Garlic Bread" class="item-img rounded">
-                        <h5 class="mb-0 item-name">Bread</h5>
-                        <div class="price">₹16.00</div>
-                    </div>
-                </div>
-
-                <!-- Desserts -->
-                <div class="col-sm-6 col-lg-4 menu-item desserts">
-                    <div class="box d-flex justify-content-between align-items-center">
-                        <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
-                        <h5 class="mb-0 item-name">Tiramisu</h5>
-                        <div class="price">₹7.00</div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 menu-item desserts">
-                    <div class="box d-flex justify-content-between align-items-center">
-                        <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
-                        <h5 class="mb-0 item-name">Gelato</h5>
-                        <div class="price">₹5.50</div>
-                    </div>
-                </div>
-
-                <!-- Drinks -->
-                <div class="col-sm-6 col-lg-4 menu-item drinks">
-                    <div class="box d-flex justify-content-between align-items-center">
-                        <img src="lemon.jpg" alt="Garlic Bread" class="item-img rounded">
-                        <h5 class="mb-0 item-name">Lemonade</h5>
-                        <div class="price">₹20.00</div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 menu-item drinks">
-                    <div class="box d-flex justify-content-between align-items-center">
-                        <img src="juice.jpg" alt="Garlic Bread" class="item-img rounded">
-                        <h5 class="mb-0 item-name">Mojito</h5>
-                        <div class="price">₹70.00</div>
-                    </div>
-                </div>
-
-                <!-- Salads -->
-                <div class="col-sm-6 col-lg-4 menu-item salads">
-                    <div class="box d-flex justify-content-between align-items-center">
-                        <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
-                        <h5 class="mb-0 item-name">Greek Salad</h5>
-                        <div class="price">₹30.00</div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 menu-item salads">
-                    <div class="box d-flex justify-content-between align-items-center">
-                        <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
-                        <h5 class="mb-0 item-name">Caesar Salad</h5>
-                        <div class="price">₹90.00</div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 menu-item salads">
-                    <div class="box d-flex justify-content-between align-items-center">
-                        <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
-                        <h5 class="mb-0 item-name">Mexican Salad</h5>
-                        <div class="price">₹40.00</div>
+                    <!-- Social Media Icons (Right side) -->
+                    <div class="social-icons">
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com" class="btn btn-outline-light btn-circle" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com" class="btn btn-outline-light btn-circle" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/+1234567890" class="btn btn-outline-light btn-circle" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </header>
 
+        <!-- Small Banner -->
+        <section class="banner"></section>
+
+        <!-- Category Buttons (Filter) -->
+        <div class="category-buttons">
+            <a href="#" class="filter-btn active" data-filter="*">All</a>
+            <a href="#" class="filter-btn" data-filter=".appetizers">Appetizers</a>
+            <a href="#" class="filter-btn" data-filter=".main-courses">Main Courses</a>
+            <a href="#" class="filter-btn" data-filter=".desserts">Desserts</a>
+            <a href="#" class="filter-btn" data-filter=".drinks">Drinks</a>
+            <a href="#" class="filter-btn" data-filter=".salads">Salads</a>
+        </div>
+
+        <!-- Menu Items Area -->
+        <section class="py-1">
+            <div class="container">
+                <div id="menu-items" class="row">
+                    <!-- Appetizers -->
+                    <div class="col-sm-6 col-lg-4 menu-item appetizers">
+                        <div class="box d-flex justify-content-between align-items-center">
+                            <!-- Item image -->
+                            <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
+                            <!-- Item name and price -->
+                            <h5 class="mb-0 item-name">Garlic Bread</h5>
+                            <div class="price">₹15.00</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 menu-item appetizers">
+                        <div class="box d-flex justify-content-between align-items-center">
+                            <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
+                            <h5 class="mb-0 item-name">Bruschetta</h5>
+                            <div class="price">₹16.50</div>
+                        </div>
+                    </div>
+
+                    <!-- Main Courses -->
+                    <div class="col-sm-6 col-lg-4 menu-item main-courses">
+                        <div class="box d-flex justify-content-between align-items-center">
+                            <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
+                            <h5 class="mb-0 item-name">Margherita Pizza</h5>
+                            <div class="price">₹200.00</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 menu-item main-courses">
+                        <div class="box d-flex justify-content-between align-items-center">
+                            <img src="bread.jpg" alt="Garlic Bread" class="item-img rounded">
+                            <h5 class="mb-0 item-name">Pasta Alfredo</h5>
+                            <div class="price">₹40.00</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 menu-item main-courses">
+                        <div class="box d-flex justify-content-between align-items-center">
+                            <img src="bread.jpg" alt="Garlic Bread" class="item-img rounded">
+                            <h5 class="mb-0 item-name">Bread</h5>
+                            <div class="price">₹16.00</div>
+                        </div>
+                    </div>
+
+                    <!-- Desserts -->
+                    <div class="col-sm-6 col-lg-4 menu-item desserts">
+                        <div class="box d-flex justify-content-between align-items-center">
+                            <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
+                            <h5 class="mb-0 item-name">Tiramisu</h5>
+                            <div class="price">₹7.00</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 menu-item desserts">
+                        <div class="box d-flex justify-content-between align-items-center">
+                            <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
+                            <h5 class="mb-0 item-name">Gelato</h5>
+                            <div class="price">₹5.50</div>
+                        </div>
+                    </div>
+
+                    <!-- Drinks -->
+                    <div class="col-sm-6 col-lg-4 menu-item drinks">
+                        <div class="box d-flex justify-content-between align-items-center">
+                            <img src="lemon.jpg" alt="Garlic Bread" class="item-img rounded">
+                            <h5 class="mb-0 item-name">Lemonade</h5>
+                            <div class="price">₹20.00</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 menu-item drinks">
+                        <div class="box d-flex justify-content-between align-items-center">
+                            <img src="juice.jpg" alt="Garlic Bread" class="item-img rounded">
+                            <h5 class="mb-0 item-name">Mojito</h5>
+                            <div class="price">₹70.00</div>
+                        </div>
+                    </div>
+
+                    <!-- Salads -->
+                    <div class="col-sm-6 col-lg-4 menu-item salads">
+                        <div class="box d-flex justify-content-between align-items-center">
+                            <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
+                            <h5 class="mb-0 item-name">Greek Salad</h5>
+                            <div class="price">₹30.00</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 menu-item salads">
+                        <div class="box d-flex justify-content-between align-items-center">
+                            <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
+                            <h5 class="mb-0 item-name">Caesar Salad</h5>
+                            <div class="price">₹90.00</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 menu-item salads">
+                        <div class="box d-flex justify-content-between align-items-center">
+                            <img src="banner.jpg" alt="Garlic Bread" class="item-img rounded">
+                            <h5 class="mb-0 item-name">Mexican Salad</h5>
+                            <div class="price">₹40.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-2">
