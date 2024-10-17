@@ -13578,6 +13578,13 @@ textarea.form-control {
     height: 400px;
     margin-bottom: 30px;
   }
+  .feature-btn{
+    visibility: hidden !important;
+  }
+  .rounded-right{
+    border-top-left-radius: 3.25rem !important;
+    border-bottom-left-radius: 3.25rem !important;
+  }
 }
 
 .image-popup {
