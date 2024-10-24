@@ -1851,5 +1851,8 @@ responsive
   .logo-img{
     height: 3.5rem !important;
   }
+  .text-card{
+    font-size: 1rem !important;
+  }
 
 }
