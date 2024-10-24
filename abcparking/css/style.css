@@ -4859,7 +4859,10 @@ input[type="button"].btn-block {
   line-height: inherit;
   white-space: nowrap;
 }
-
+.logo_img{
+  height: 80px;
+  border-radius: 12px;
+}
 .navbar-brand:hover,
 .navbar-brand:focus {
   text-decoration: none;
@@ -4990,6 +4993,10 @@ input[type="button"].btn-block {
   .navbar-expand-md>.container-fluid {
     padding-right: 0;
     padding-left: 0;
+  }
+
+  .logo_img{
+    height: 50px;
   }
 }
 
@@ -11761,7 +11768,7 @@ h5,
 .ftco-navbar-light {
   background: transparent !important;
   position: absolute;
-  top: 20px;
+  /* top: 20px; */
   left: 0;
   right: 0;
   z-index: 3;
@@ -12181,13 +12188,13 @@ h5,
     height: 250px !important;
     position: relative;
   }
-  
+
   .hero-wrap.hero-wrap-2 .overlay {
     width: 100%;
     opacity: .3;
     height: 250px;
   }
-  
+
   .hero-wrap.hero-wrap-2 .slider-text {
     height: 250px !important;
   }
@@ -14387,5 +14394,5 @@ textarea.form-control {
     border-width: 12px 89px 0 78px !important;
   }
 
-  
+
 }
