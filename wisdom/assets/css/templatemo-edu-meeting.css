@@ -690,8 +690,6 @@ banner
 }
 
 #bg-video {
-	position: absolute; /* Ensure it covers the entire section */
-	transform: translate(-50%, -50%); 
     top: 50%; /* Center vertically */
     left: 50%;
     min-width: 100%;
