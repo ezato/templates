@@ -1124,14 +1124,16 @@ section.our-courses {
 
 .our-courses .item .down-content {
   background-color: #fff;
+  border-radius: 20px 0px 20px 0px;
 }
 
 .our-courses .item .down-content h4 {
   padding: 25px;
   font-size: 18px;
-  color: #1f272b;
+  color: #3d93c6;
   text-align: center; 
-  border-bottom: 1px solid #eee;
+  /* border-bottom: 1px solid #eee; */
+  font-weight: 600;
 }
 
 .our-courses .item .down-content .info {
@@ -1904,4 +1906,10 @@ responsive
   60% {
       transform: translateY(-5px);
   }
+}
+
+.how-work{
+  padding-bottom: 0px !important;
+  margin-bottom: 15px !important;
+  color: #3d93c6 !important;
 }
