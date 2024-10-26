@@ -1099,6 +1099,7 @@ section.apply-now .item p {
   height: 0;
   transition: height 300ms ease-in-out;
   border-bottom: 1px solid #fff;
+  padding: 0px !important;
 }
 .accordion-body > .content {
   padding: 20px;
