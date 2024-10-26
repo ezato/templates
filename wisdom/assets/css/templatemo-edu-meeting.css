@@ -1030,7 +1030,11 @@ section.apply-now {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 140px 0px;
+  padding: 50px 0px;
+}
+
+.about {
+  background-image: url(../images/facts-bg.jpg) !important;
 }
 
 section.apply-now .item {
@@ -1114,8 +1118,8 @@ section.our-courses {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 140px;
-  padding-bottom: 130px;
+  padding-top: 210px;
+  padding-bottom: 40px;
 }
 
 .our-courses .item .down-content {
@@ -1249,6 +1253,9 @@ section.our-courses {
   line-height: 50px;
 }
 
+.our-courses .owl-nav {
+  display: none; /* Hides both previous and next buttons */
+}
 
 /*
 ---------------------------------------------
@@ -1686,6 +1693,10 @@ section.meetings-page .pagination ul li a:hover {
 	width: 31%;
 }
 
+.testimonial{
+  padding-top: 100px !important;
+}
+
 @media (max-width: 992px) {
 	.templatemo-item-col {
 		width: 45%;
@@ -1858,4 +1869,39 @@ responsive
     font-size: 1rem !important;
   }
 
+  section.our-courses {
+    padding-top: 350px;
+  }
+
+}
+
+.whatsapp-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color:rgb(245, 164, 37);
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  z-index: 1000;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  animation: bounce 2s infinite; /* Animation applied */
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(-10px);
+  }
+  60% {
+      transform: translateY(-5px);
+  }
 }
